@@ -1,3 +1,10 @@
+development:
+  hydrate_books:
+    class: HydrateBookJob
+    queue: background
+    args: []
+    schedule: every 5 seconds
+
 # production:
 #   periodic_cleanup:
 #     class: CleanSoftDeletedRecordsJob

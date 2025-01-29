@@ -152,6 +152,16 @@ GEM
     matrix (0.4.2)
     mini_mime (1.1.5)
     minitest (5.25.4)
+    mission_control-jobs (1.0.1)
+      actioncable (>= 7.1)
+      actionpack (>= 7.1)
+      activejob (>= 7.1)
+      activerecord (>= 7.1)
+      importmap-rails (>= 1.2.1)
+      irb (~> 1.13)
+      railties (>= 7.1)
+      stimulus-rails
+      turbo-rails
     msgpack (1.7.5)
     net-imap (0.5.5)
       date
@@ -179,6 +189,10 @@ GEM
       racc (~> 1.4)
     nokogiri (1.18.2-x86_64-linux-musl)
       racc (~> 1.4)
+    open-uri (0.5.0)
+      stringio
+      time
+      uri
     ostruct (0.6.1)
     parallel (1.26.3)
     parser (3.3.7.0)
@@ -312,6 +326,8 @@ GEM
     thruster (0.1.10)
     thruster (0.1.10-aarch64-linux)
     thruster (0.1.10-x86_64-linux)
+    time (0.4.1)
+      date
     timeout (0.4.3)
     turbo-rails (2.0.11)
       actionpack (>= 6.0.0)
@@ -355,6 +371,8 @@ DEPENDENCIES
   importmap-rails
   jbuilder
   kamal
+  mission_control-jobs
+  open-uri (~> 0.5.0)
   pg (~> 1.1)
   propshaft
   puma (>= 5.0)
