@@ -41,6 +41,18 @@ CREATE TABLE public.books (
 
 
 --
+-- Name: firehose_state; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.firehose_state (
+    key character varying NOT NULL,
+    val character varying,
+    created_at timestamp(6) without time zone NOT NULL,
+    updated_at timestamp(6) without time zone NOT NULL
+);
+
+
+--
 -- Name: reviews; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -82,6 +94,14 @@ ALTER TABLE ONLY public.books
 
 
 --
+-- Name: firehose_state firehose_state_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.firehose_state
+    ADD CONSTRAINT firehose_state_pkey PRIMARY KEY (key);
+
+
+--
 -- Name: reviews reviews_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -112,6 +132,7 @@ ALTER TABLE ONLY public.reviews
 SET search_path TO "$user", public;
 
 INSERT INTO "schema_migrations" (version) VALUES
+('20250130084431'),
 ('20250128025637'),
 ('20250128024048'),
 ('20250127005447');
