@@ -1,0 +1,6 @@
+<h1>Search!</h1>
+<p>Search results for: <%= @query %></p>
+<div>Found: <%= @books.count %> books</div>
+<% @books.each do |book| %>
+    <%= render partial: "books/card", locals: { book: book } %>
+<% end %>

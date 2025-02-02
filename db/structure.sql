@@ -36,7 +36,8 @@ CREATE TABLE public.books (
     author character varying,
     cover_image_url character varying,
     created_at timestamp(6) without time zone NOT NULL,
-    updated_at timestamp(6) without time zone NOT NULL
+    updated_at timestamp(6) without time zone NOT NULL,
+    rating double precision DEFAULT 0.0 NOT NULL
 );
 
 
@@ -132,6 +133,7 @@ ALTER TABLE ONLY public.reviews
 SET search_path TO "$user", public;
 
 INSERT INTO "schema_migrations" (version) VALUES
+('20250202190902'),
 ('20250130084431'),
 ('20250128025637'),
 ('20250128024048'),
