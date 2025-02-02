@@ -9,5 +9,4 @@ class AddFkReviewsToBooks < ActiveRecord::Migration[8.0]
   def down
     execute 'alter table reviews drop foreign key fk_reviews_to_books'
   end
-
 end
