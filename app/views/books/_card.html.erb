@@ -3,6 +3,6 @@
     <p>Author: <%= book.author %></p>
     <p>ISBN: <%= book.isbn10 %></p>
     <p>ISBN13: <%= book.isbn13 %></p>
-    <p>Rating: <%= book.rating %></p>
+    <p>Rating: <%= book.rating %> (<%= book.rating_count %>)</p>
     <p><img src="<%= book.cover_image_url %>" /></p>
 </div>

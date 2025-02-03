@@ -8,8 +8,8 @@ one:
   cover_image_url: MyString
 
 two:
-  isbn10: MyString
-  isbn13: MyString
+  isbn10: abc
+  isbn13: def
   title: MyString
   author: MyString
   cover_image_url: MyString

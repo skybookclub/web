@@ -4,6 +4,11 @@ development:
     queue: background
     args: []
     schedule: every 5 seconds
+  update_book_ratings:
+    class: UpdateBookRatingsJob
+    queue: background
+    args: []
+    schedule: every 5 seconds
 
 # production:
 #   periodic_cleanup:
