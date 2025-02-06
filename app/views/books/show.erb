@@ -1,0 +1,13 @@
+<h1><%= @book.title%></h1>
+<%= render partial: "books/card", locals: { book: @book } %>
+
+<% if @book.reviews.any? %>
+<h2>Reviews</h2>
+  <ul>
+    <% @book.reviews.each do |review| %>
+      <li><p><%= review.did %> at <%= review.created_at.in_time_zone('America/Los_Angeles').to_formatted_s(:long) %>:</p>
+        <p><%= review.text %></p>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
