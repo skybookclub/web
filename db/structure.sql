@@ -55,6 +55,19 @@ CREATE TABLE public.firehose_state (
 
 
 --
+-- Name: profiles; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.profiles (
+    did character varying NOT NULL,
+    handle character varying,
+    avatar character varying,
+    created_at timestamp(6) without time zone NOT NULL,
+    updated_at timestamp(6) without time zone NOT NULL
+);
+
+
+--
 -- Name: reviews; Type: TABLE; Schema: public; Owner: -
 --
 
@@ -104,6 +117,14 @@ ALTER TABLE ONLY public.firehose_state
 
 
 --
+-- Name: profiles profiles_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.profiles
+    ADD CONSTRAINT profiles_pkey PRIMARY KEY (did);
+
+
+--
 -- Name: reviews reviews_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
@@ -117,6 +138,14 @@ ALTER TABLE ONLY public.reviews
 
 ALTER TABLE ONLY public.schema_migrations
     ADD CONSTRAINT schema_migrations_pkey PRIMARY KEY (version);
+
+
+--
+-- Name: reviews fk_rails_d859b9aec0; Type: FK CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.reviews
+    ADD CONSTRAINT fk_rails_d859b9aec0 FOREIGN KEY (did) REFERENCES public.profiles(did);
 
 
 --
@@ -134,6 +163,8 @@ ALTER TABLE ONLY public.reviews
 SET search_path TO "$user", public;
 
 INSERT INTO "schema_migrations" (version) VALUES
+('20250207063815'),
+('20250207063432'),
 ('20250202190902'),
 ('20250130084431'),
 ('20250128025637'),
