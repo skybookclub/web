@@ -4,8 +4,3 @@ one:
   did: MyString
   handle: MyString
   avatar: MyString
-
-two:
-  did: MyString
-  handle: MyString
-  avatar: MyString
