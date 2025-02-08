@@ -90,8 +90,9 @@ test:
 production:
   primary: &primary_production
     <<: *default
-    database: skybookclub_production
-    username: web
+    url:      <%= ENV["DATABASE_URL"] %>
+    database: skybookclub
+    username: <%= ENV["WEB_DATABASE_USERNAME"] %>
     password: <%= ENV["WEB_DATABASE_PASSWORD"] %>
   cache:
     <<: *primary_production
