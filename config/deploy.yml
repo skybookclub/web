@@ -1,13 +1,18 @@
 # Name of your application. Used to uniquely configure containers.
-service: web
+service: skybookclub-web
 
 # Name of the container image.
-image: your-user/web
+image: andreymaraev/skybookclub-ingest
+
+ssh:
+  user: <%= ENV.fetch("DEPLOY_USER") %>
+
+primary_role: web
 
 # Deploy to these servers.
 servers:
   web:
-    - 192.168.0.1
+    hosts: <%= ENV.fetch("INGEST_IPS").split(' ') %>
   # job:
   #   hosts:
   #     - 192.168.0.1
@@ -19,13 +24,13 @@ servers:
 # Note: If using Cloudflare, set encryption mode in SSL/TLS setting to "Full" to enable CF-to-app encryption.
 proxy:
   ssl: true
-  host: app.example.com
+  host: skybookclub.com
 
 # Credentials for your image host.
 registry:
   # Specify the registry server, if you're not using Docker Hub
   # server: registry.digitalocean.com / ghcr.io / ...
-  username: your-user
+  username: andreymaraev
 
   # Always use an access token rather than real password when possible.
   password:
