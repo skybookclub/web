@@ -2,7 +2,7 @@
 service: skybookclub-web
 
 # Name of the container image.
-image: andreymaraev/skybookclub-ingest
+image: andreymaraev/skybookclub-web
 
 ssh:
   user: <%= ENV.fetch("DEPLOY_USER") %>
