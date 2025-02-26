@@ -24,4 +24,6 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME}}/skybookclub-web:latest
+          tags: |
+            ${{ secrets.DOCKERHUB_USERNAME}}/skybookclub-web:${{ github.sha }}
+            ${{ secrets.DOCKERHUB_USERNAME}}/skybookclub-web:latest
