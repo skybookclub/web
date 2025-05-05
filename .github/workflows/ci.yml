@@ -131,4 +131,5 @@ jobs:
           RAILS_MASTER_KEY: ${{ secrets.RAILS_MASTER_KEY }}
         run: |
           sudo gem install kamal
+          echo "$RAILS_MASTER_KEY" > config/master.key
           kamal deploy
